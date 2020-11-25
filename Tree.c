@@ -95,16 +95,16 @@ void printInfixTree(Node_t *current) {
     if (current == NULL) {
         return;
     }
-    printPrefixTree(current->left);
+    printInfixTree(current->left);
     printf("[%d, %s], ", current->key, current->item);
-    printPrefixTree(current->right);
+    printInfixTree(current->right);
 }
 
 void printPostfixTree(Node_t *current) {
     if (current == NULL) {
         return;
     }
-    printPrefixTree(current->left);
-    printPrefixTree(current->right);
+    printPostfixTree(current->left);
+    printPostfixTree(current->right);
     printf("[%d, %s], ", current->key, current->item);
 }
